@@ -1,0 +1,239 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure the gradient covers the full viewport height */
+    background: linear-gradient(
+        to bottom,
+        #0E0719 0%,
+        #100C23 59%,
+        #181C49 100%
+    );
+    color: #ffffff; /* Assuming light text on dark background */
+    position: relative;
+}
+
+.main-header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 70px;
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 22.5%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust as needed for responsiveness */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-header::before,
+.main-header::after {
+    content: '✦'; /* Unicode sparkle character */
+    color: #E55AC5;
+    font-size: 40px; /* Adjust size as needed */
+    margin: 0 20px; /* Space between sparkle and text */
+}
+
+.highlight {
+    color: #E55AC5;
+}
+
+.button-container {
+    position: absolute;
+    top: 55%; /* Adjust this value to position below the middle of the page */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 100px; /* Increased from 60px to 100px */
+    width: 95%; /* Increased to give more room */
+    max-width: 1400px;
+    justify-content: center;
+}
+
+.gradient-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 36.81px;
+    color: #ffffff;
+    background-color: #1C1F28;
+    border: none;
+    padding: 30px 60px; /* Further increased padding */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 
+        0 0 48.98px 8.07px rgba(62, 36, 135, 0.25),  /* Reduced intensity */
+        0 0 68.15px 8px rgba(236, 131, 187, 0.3);    /* Reduced intensity */
+    border-radius: 29px; /* Added border radius */
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+    text-decoration: none;
+}
+
+.gradient-button::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(to right, #EC83BB, #B664DB);
+    z-index: -1;
+    border-radius: 34px; /* 29px + 5px */
+}
+
+.gradient-button::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: #1C1F28;
+    z-index: -1;
+    border-radius: 24px; /* 29px - 5px */
+}
+
+.gradient-button:hover {
+    box-shadow: 
+        0 0 97.96px 16.14px rgba(62, 36, 135, 0.5),  /* Original intensity */
+        0 0 136.3px 16px rgba(236, 131, 187, 0.6);   /* Original intensity */
+}
+
+.sub-header-container {
+    position: absolute;
+    top: 32%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px; /* Adjust as needed */
+    text-align: center;
+}
+
+.sub-header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0;
+}
+
+.highlight-link {
+    color: #E55AC5;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 0 2px; /* Small initial padding */
+}
+
+.highlight-link:hover {
+    transform: scale(1.05);
+    color: #FF7ED4;
+    text-shadow: 0 0 8px rgba(229, 90, 197, 0.5);
+    padding: 0 8px; /* Increased padding on hover */
+}
+
+.level-selection {
+    position: absolute;
+    top: 55%; /* Adjust this value to position vertically */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.gradient-input-container {
+    width: 940.25px;
+    height: 120px; /* Reduced from 130px */
+    margin: 0 auto;
+    position: relative;
+    border-radius: 29px;
+    background: linear-gradient(to right, #EC83BB, #B664DB);
+    padding: 5px;
+    box-shadow: 
+        0 0 97.96px 16.14px rgba(62, 36, 135, 0.5),
+        0 0 136.3px 16px rgba(236, 131, 187, 0.6);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.gradient-input-container:hover {
+    box-shadow: 
+        0 0 120px 20px rgba(62, 36, 135, 0.6),
+        0 0 160px 20px rgba(236, 131, 187, 0.7);
+}
+
+.search-icon {
+    width: 72px; /* Increased significantly */
+    height: 72px; /* Increased significantly */
+    position: absolute;
+    left: 24px; /* Adjusted for new size */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.send-icon {
+    width: 78px;
+    height: 78px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer; /* Makes it clear the icon is clickable */
+    transition: transform 0.3s ease; /* Add smooth transition for growth effect */
+}
+
+.send-icon:hover {
+    transform: translateY(-50%) scale(1.2); /* Grow by 10% on hover */
+}
+
+.gradient-input {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 36.81px;
+    color: #ffffff;
+    background-color: #1C1F28;
+    border: none;
+    border-radius: 24px;
+    padding: 0 110px; /* Increased padding on both sides to accommodate icons */
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.gradient-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gradient-input:focus {
+    box-shadow: inset 0 0 10px rgba(236, 131, 187, 0.3);
+}
+
+.large-button {
+    width: 940.25px;
+    height: 130px; /* Increased from 116.43px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
