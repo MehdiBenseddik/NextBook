@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - NextBook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Existing styles -->
+    <link rel="stylesheet" href="loadingstyles.css"> <!-- Link to bookanimation.css -->
+</head>
+<body>
+    <div class="book-container">
+        <div class="book">
+            <div class="book__pg-shadow"></div>
+            <div class="book__pg"></div>
+            <div class="book__pg book__pg--2"></div>
+            <div class="book__pg book__pg--3"></div>
+            <div class="book__pg book__pg--4"></div>
+            <div class="book__pg book__pg--5"></div>
+        </div>
+        <div class="loading-text">
+            <span id="loading-text">Loading Books...</span>
+        </div>        
+    </div>
+
+    <script>
+        const texts = [
+            "Loading Books...",
+            "Finding the best books...",
+            "Searching database...",
+            "Just a moment...",
+            "Thanks for your patience..."
+        ];
+        
+        let index = 0;
+        const displayDuration = 2000; // Duration for each text in milliseconds
+        
+        const textElement = document.querySelector(".loading-text");
+        
+        // Function to change the loading text
+        function changeText() {
+            textElement.textContent = texts[index];
+            index = (index + 1) % texts.length; // Loop back to the first text
+        }
+        
+        // Initial display
+        changeText();
+        
+        // Change text at the defined interval
+        setInterval(changeText, displayDuration);
+        
+        // Redirect to books.html after 3 seconds
+        setTimeout(function() {
+            window.location.href = "books.html"; // Redirect to books.html
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+</html>
