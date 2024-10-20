@@ -246,46 +246,51 @@ body {
     padding: 0;
 }
 
-.book-container {
-    width: 250px; /* Width remains the same */
-    height: 300px; /* Height remains the same */
-    border: 2px solid #ffffff; /* Same border color as buttons */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow similar to buttons */
-    transition: transform 0.2s; /* Animation effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.book-container:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-}
-
-.book-cover {
-    width: 100%;
-    height: 80%; /* Adjust height for the cover image */
-    background-color: #ccc; /* Placeholder color for book cover */
-}
-
-.book-info {
-    font-weight: bold;
-    color: #ffffff; /* White text */
-    text-align: center;
-    margin-top: 5px; /* Space between cover and text */
-    width: 100%; /* Ensure it takes the full width */
-}
-
-.book-display {
+.bookcover-display {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: flex-start; /* Align items at the start vertically */
     flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
-    padding-top: 20px; /* Use padding to create space below the header */
+    padding-top: 350px; /* Increase padding to push it down from the header */
 }
 
-.book-item {
-    display: flex;
-    flex-direction: column; /* Stack book cover and info vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 0 15px; /* Space between book items */
+.bookcover-container {
+    width: 333.333px;
+    height: 400px;
+    position: relative;
+    margin: 40px;
+    padding: 5px; /* Padding for the space for the border */
+    border-radius: 29px; /* Same radius as the input */
+    background: linear-gradient(to right, #EC83BB, #B664DB); /* Gradient background */
+    box-shadow: 
+        0 0 48.98px 8.07px rgba(62, 36, 135, 0.25), /* Optional shadow for depth */
+        0 0 68.15px 8px rgba(236, 131, 187, 0.3);
+    z-index: 1; /* Positioned above background elements */
+    overflow: hidden; /* Ensures inner elements are clipped */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for shadow and scale */
 }
+
+.bookcover-container:hover {
+    box-shadow: 
+        0 0 97.96px 16.14px rgba(62, 36, 135, 0.5), /* Intensified shadow on hover */
+        0 0 136.3px 16px rgba(236, 131, 187, 0.6); /* Intensified shadow on hover */
+    transform: scale(1.05); /* Grow slightly on hover */
+}
+
+.bookcover {
+    background-color: #1C1F28; /* Dark inner background */
+    width: 100%;
+    height: 100%;
+    border-radius: 24px; /* Slightly smaller radius to sit inside the gradient */
+    transition: transform 0.3s ease; /* Transition for grow effect */
+    z-index: 2; /* Positioned above the gradient border */
+}
+
+.bookcover-container:hover .bookcover {
+    transform: scale(1); /* Maintain size on hover to ensure visibility */
+}
+
+
+
+
+
